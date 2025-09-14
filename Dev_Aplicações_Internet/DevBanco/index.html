@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let saldo = 0
+        let sair = false
+        while (!sair) {
+            let opcao = prompt("Bem vindo ao banco!\n" +
+                "Escolha uma opção:\n" +
+                "1 - Depositar\n" +
+                "2 - Ver Saldo\n" +
+                "3 - Sacar\n" +
+                "4 - Sair\n"
+            )
+            if (opcao == "1") {
+                let valorDeposito = parseFloat(prompt("Digite o valor do depósito:"))
+                if (isNaN(valorDeposito) || valorDeposito <= 0) {
+                    alert("Valor inválido para depósito.")
+                } else {
+                    saldo += valorDeposito
+                    alert("Depósito de R$ " + valorDeposito + " realizado com sucesso!")
+                }
+
+            } else if (opcao == "2") {
+                let saldoAtual = saldo
+                alert("Seu saldo atual é: R$ " + saldoAtual)
+
+            } else if (opcao == "3") {
+                let valorSaque = parseFloat(prompt("Digite o valor do saque:"))
+                if (isNaN(valorSaque) || valorSaque <= 0) {
+                    alert("Valor inválido para saque.")
+                } else if (valorSaque > saldo) {
+                    alert("Saldo insuficiente para saque.")
+                } else {
+                    saldo -= valorSaque
+                    alert("Saque de R$ " + valorSaque + " realizado com sucesso!")
+                }
+
+            } else
+
+                if (opcao == "4") {
+                    alert("Volte sempre!")
+                    sair = true
+                } else {
+                    alert("Opção inválida")
+                }
+        }
+    </script>
+</body>
+
+</html>

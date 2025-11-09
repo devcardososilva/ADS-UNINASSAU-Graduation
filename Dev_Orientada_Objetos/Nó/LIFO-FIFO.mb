@@ -1,10 +1,10 @@
-## Diferença entre LIFO e FIFO
+Diferença entre LIFO e FIFO
 
 Esses dois conceitos são usados para definir a ordem em que os dados são armazenados e removidos em algumas estruturas.
 
 ---
 
-### 🔁 LIFO (Last In, First Out)
+🔁 LIFO (Last In, First Out)
 
 Em português, **Último a entrar, primeiro a sair.**
 
@@ -16,7 +16,7 @@ Um exemplo de uso de pilha é o comando **“Desfazer” (Ctrl + Z)** em program
 
 ---
 
-### 🔄 FIFO (First In, First Out)
+🔄 FIFO (First In, First Out)
 
 Em português, **Primeiro a entrar, primeiro a sair.**
 

@@ -37,7 +37,7 @@ class Ave extends Animal {
     }
 }
 
-public class Main {
+public class Herança {
     public static void main(String[] args) {
         Cachorro meuDog = new Cachorro("Toto", "Pincher");
         System.out.println("Nome do cachorro: " + meuDog.nome);

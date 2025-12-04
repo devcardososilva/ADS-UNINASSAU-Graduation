@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista</title>
+</head>
+<body>
+
+    <input type="text" id="campoInput">
+    <button id="botaoEnviar">Enviar</button>
+    <ul id="listaItens"></ul>
+
+<script>
+
+    // pegando os elementos
+    let campoInput = document.getElementById("campoInput")
+    var botaoEnviar = document.getElementById("botaoEnviar")
+    let listaItens = document.getElementById("listaItens")
+
+    // pegando itens salvos
+    var itensSalvos = JSON.parse(localStorage.getItem("itensSalvos")) ?? []
+
+    // mostrando itens que já estavam salvos
+    for(let i = 0; i < itensSalvos.length; i++){
+        let novoItem = document.createElement("li")
+        novoItem.textContent = itensSalvos[i]
+        listaItens.appendChild(novoItem)
+    }
+
+    campoInput.value = ""  // limpando
+
+    // quando clicar no botão
+    botaoEnviar.addEventListener("click", function(){
+
+        if(campoInput.value != ""){
+
+            let novoItem = document.createElement("li")
+            novoItem.innerHTML = campoInput.value
+
+            listaItens.appendChild(novoItem)
+
+            itensSalvos.push(campoInput.value)
+            localStorage.setItem("itensSalvos", JSON.stringify(itensSalvos))
+
+            campoInput.value = ""
+        }
+
+    })
+
+</script>
+
+</body>
+</html>
